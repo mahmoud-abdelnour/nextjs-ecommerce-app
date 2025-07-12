@@ -1,7 +1,6 @@
 
 import NextAuth, { SessionStrategy } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import CustomerServices from "@/app/_services/CustomerServices";
 
 import type { NextAuthOptions } from "next-auth";
 export const authOptions: NextAuthOptions = {
@@ -12,11 +11,25 @@ export const authOptions: NextAuthOptions = {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" }
       },
-      async authorize(credentials) {
+      async authorize(credentials, req) {
         try {
-          const userInfo = await CustomerServices.loginCustomer(credentials);
-            return userInfo;
-
+          // const userInfo = await CustomerServices.loginCustomer(credentials);
+          // if (userInfo) return userInfo;
+          // For now, return a mock user object for demonstration:
+          if (credentials?.email && credentials?.password) {
+            return {
+              id: "1",
+              name: "Demo",
+              lastName: "User",
+              email: credentials.email,
+              streetAddress: "",
+              cityAddress: "",
+              phone: "",
+              image: "",
+              token: "demo-token"
+            };
+          }
+          return null;
         } catch (error) {
           let message = "Login failed! Please try again.";
           if (error && typeof error === "object" && "response" in error) {
