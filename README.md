@@ -1,24 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Ecommerce App
+
+A modern ecommerce application built with Next.js featuring product listings, shopping cart, checkout, and user profile pages.
+
+## Features
+
+- Product catalog with pagination
+- Shopping cart functionality
+- Checkout page.
+- Coupons page
+- User authentication and profile management
+- Responsive design with Tailwind CSS
+- State management with React Query
+- Form handling with React Hook Form
+- Toast notifications
+- Carousel for featured products
+
+## Technologies Used
+
+- **Framework**: Next.js 15
+- **Styling**:  React Bootstrap, Sass
+- **State Management**: React Query, React-use-cart
+- **Authentication**: Next-auth
+- **Form Handling**: React Hook Form
+- **HTTP Client**: Axios
+- **Date Handling**: Day.js
+- **Utilities**: clsx, tailwind-merge, class-variance-authority
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js (v18 or later recommended)
+- npm or yarn
+- Git
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 1. Clone the repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+    git clone https://github.com/mahmoud-abdelnour/nextjs-ecommerce-app.git
+    cd nextjs-ecommerce-app
+
+
+## 2. Install  dependencies:
+
+    npm install
+    # or
+    yarn install
+
+## 3. Set up environment variables:
+Create a .env.local file in the root directory and add your environment variables:
+
+NEXT_PUBLIC_API_URL=your_api_url_here
+
+NEXTAUTH_SECRET=your_auth_secret_here
+
+Add other required environment variables
+
+## 4.Development mode:
+    npm run dev
+    # or
+    yarn dev
+
+Open http://localhost:3000 to view it in the browser.
+
 
 ## Learn More
 
